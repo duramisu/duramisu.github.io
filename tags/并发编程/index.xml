@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>并发编程 on Sqyq</title>
+    <link>http://duramisu.github.io/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 并发编程 on Sqyq</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Feb 2017 22:50:52 +0800</lastBuildDate>
+    
+	<atom:link href="http://duramisu.github.io/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java并发编程基础（一）</title>
+      <link>http://duramisu.github.io/2017/java-concurrent-01/</link>
+      <pubDate>Mon, 27 Feb 2017 22:50:52 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2017/java-concurrent-01/</guid>
+      <description>目标：  掌握并发编程中变量可见性问题 掌握造成线程安全、变量可见性问题的原因 掌握volatile关键字的用途、使用场景  如何在多个线程中共享数据，让变量可见？  使用final修饰变量(不可变变量) 使用synchronized同步代码块  import java.util.concurrent.TimeUnit; /** * @ClassName VisibilityDemo * @Description * @Author 夕 * @Date 2016-07-27 23:07 * @Version V1.0 **/ public class VisibilityDemo { //状态标识 private static boolean is = true; public static void main(String[] args) { new Thread(new Runnable() { @Override public void run() { int i=0; while (VisibilityDemo.is){ synchronized (this){ i++; } } System.out.println(&amp;quot;i===============&amp;gt;&amp;quot;+i); } }).start(); try { TimeUnit.</description>
+    </item>
+    
+  </channel>
+</rss>

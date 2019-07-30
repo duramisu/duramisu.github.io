@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Mi.Sqyq">
+  
+  
+  
+  
+  <link rel="next" href="http://duramisu.github.io/2017/java-concurrent-01/" />
+  <link rel="canonical" href="http://duramisu.github.io/2017/design-pattern/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           设计模式-单例模式 | Sqyq
+       
+  </title>
+  <meta name="title" content="设计模式-单例模式 | Sqyq">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/duramisu.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "设计模式-单例模式",
+    "headline" : "设计模式-单例模式",
+    "description" : "\/** * @ClassName SingleDemo * @Description 多线程高并发下的单例模式 * @Author 夕 * @Date 2016-07-27 20:58 * @Version V1.0 **\/ public class Singleton { \/\/ volatile关键字主要的作用是（保证变量在多线程中的可见性），当第一个线程创建了Singleton对象后，但是还没有走完， \/\/ Singleton就是对外可见的，后续再来的线程看到已经创建，就无需进入第一个判断中，直接返回Singleton对象 private static volatile Singleton instance; \/\/让构造函数私有化，这样该类就不会被实例化 private Singleton(){ } public static Singleton getIntance(){ \/\/第一个判断空，如果instince是空的，若同时有100个线程访问 if(instance==null){ \/\/使用synchronized同步代码块，加锁，其中一个线程进入，其它线程等待 synchronized (Singleton.class){ if (instance==null){ instance = new Singleton(); \/\/代码1 \/\/代码2 } } } return instance; } }  ",
+    "inLanguage" : "en-us",
+    "author" : "Mi.Sqyq",
+    "creator" : "Mi.Sqyq",
+    "publisher": "Mi.Sqyq",
+    "accountablePerson" : "Mi.Sqyq",
+    "copyrightHolder" : "Mi.Sqyq",
+    "copyrightYear" : "2017",
+    "datePublished": "2017-02-27 22:50:52 \x2b0800 CST",
+    "dateModified" : "2017-02-27 22:50:52 \x2b0800 CST",
+    "url" : "http:\/\/duramisu.github.io\/2017\/design-pattern\/",
+    "wordCount" : "59",
+    "keywords" : [ "java","设计模式","单例", "Sqyq"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://duramisu.github.io/">Sqyq</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://duramisu.github.io/">Sqyq</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">设计模式-单例模式</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://duramisu.github.io/" rel="author">Mi.Sqyq</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2017-02-27 itemprop="datePublished">February 27, 2017</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="http://duramisu.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <pre><code class="language-java">/**
+ * @ClassName SingleDemo
+ * @Description 多线程高并发下的单例模式
+ * @Author 夕
+ * @Date 2016-07-27 20:58
+ * @Version V1.0
+ **/
+public class Singleton {
+
+    // volatile关键字主要的作用是（保证变量在多线程中的可见性），当第一个线程创建了Singleton对象后，但是还没有走完，
+    // Singleton就是对外可见的，后续再来的线程看到已经创建，就无需进入第一个判断中，直接返回Singleton对象
+    private static volatile Singleton instance;
+
+    //让构造函数私有化，这样该类就不会被实例化
+    private Singleton(){
+
+    }
+
+    public static Singleton getIntance(){
+        //第一个判断空，如果instince是空的，若同时有100个线程访问
+        if(instance==null){
+            //使用synchronized同步代码块，加锁，其中一个线程进入，其它线程等待
+            synchronized (Singleton.class){
+                if (instance==null){
+                    instance = new Singleton();
+                    //代码1
+                    //代码2
+                }
+            }
+        }
+        return instance;
+    }
+}
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Mi.Sqyq </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://duramisu.github.io/2017/design-pattern/>http://duramisu.github.io/2017/design-pattern/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="http://duramisu.github.io/tags/java/">
+                    #java</a></span>
+            
+            <span class="tag"><a href="http://duramisu.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                    #设计模式</a></span>
+            
+            <span class="tag"><a href="http://duramisu.github.io/tags/%E5%8D%95%E4%BE%8B/">
+                    #单例</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://duramisu.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+        <a href="http://duramisu.github.io/2017/java-concurrent-01/" class="next" rel="next" title="Java并发编程基础（一）">Java并发编程基础（一）&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://duramisu.github.io/">Mi.Sqyq</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

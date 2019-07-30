@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>io on Sqyq</title>
+    <link>http://duramisu.github.io/tags/io/</link>
+    <description>Recent content in io on Sqyq</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Jul 2019 00:40:35 +0800</lastBuildDate>
+    
+	<atom:link href="http://duramisu.github.io/tags/io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java读取文件</title>
+      <link>http://duramisu.github.io/2019/java-readfile/</link>
+      <pubDate>Mon, 08 Jul 2019 00:40:35 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2019/java-readfile/</guid>
+      <description>import java.io.BufferedReader; import java.io.File; import java.io.FileReader; import java.io.IOException; /** * 读取文件内容，这里只是将文件读取，打印出具体数据，可以根据自己的情况，修改代码 * @author duyq * */ public class ReadFilesTest { public static void main(String[] args) { //按行读取文件 ReadFilesTest readFilesTest = new ReadFilesTest(&amp;quot;/Users/duyq/1.txt&amp;quot;); readFilesTest.readFileByLines(); } private String filePath;//文件路径，类似（在osx：/Users/duyq/1.txt，windows：c:/duyq/1.txt） private ReadFilesTest(String filePath) { this.filePath = filePath; } /** * 按行读取文件 * * @return */ public void readFileByLines() { File file = new File(this.filePath); //判断文件是否存在 if (!file.exists()) { System.out.println(this.filePath + &amp;quot; 文件不存在。&amp;quot;); } BufferedReader reader = null; try { reader = new BufferedReader(new FileReader(file)); String tempString = &amp;quot;&amp;quot;; while ((tempString = reader.</description>
+    </item>
+    
+  </channel>
+</rss>

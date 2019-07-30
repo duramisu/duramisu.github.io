@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>单例 on Sqyq</title>
+    <link>http://duramisu.github.io/tags/%E5%8D%95%E4%BE%8B/</link>
+    <description>Recent content in 单例 on Sqyq</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Feb 2017 22:50:52 +0800</lastBuildDate>
+    
+	<atom:link href="http://duramisu.github.io/tags/%E5%8D%95%E4%BE%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>设计模式-单例模式</title>
+      <link>http://duramisu.github.io/2017/design-pattern/</link>
+      <pubDate>Mon, 27 Feb 2017 22:50:52 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2017/design-pattern/</guid>
+      <description>/** * @ClassName SingleDemo * @Description 多线程高并发下的单例模式 * @Author 夕 * @Date 2016-07-27 20:58 * @Version V1.0 **/ public class Singleton { // volatile关键字主要的作用是（保证变量在多线程中的可见性），当第一个线程创建了Singleton对象后，但是还没有走完， // Singleton就是对外可见的，后续再来的线程看到已经创建，就无需进入第一个判断中，直接返回Singleton对象 private static volatile Singleton instance; //让构造函数私有化，这样该类就不会被实例化 private Singleton(){ } public static Singleton getIntance(){ //第一个判断空，如果instince是空的，若同时有100个线程访问 if(instance==null){ //使用synchronized同步代码块，加锁，其中一个线程进入，其它线程等待 synchronized (Singleton.class){ if (instance==null){ instance = new Singleton(); //代码1 //代码2 } } } return instance; } }  </description>
+    </item>
+    
+  </channel>
+</rss>

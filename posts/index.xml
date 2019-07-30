@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Sqyq</title>
+    <link>http://duramisu.github.io/posts/</link>
+    <description>Recent content in Posts on Sqyq</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Jul 2019 18:59:42 +0800</lastBuildDate>
+    
+	<atom:link href="http://duramisu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis Use01</title>
+      <link>http://duramisu.github.io/2019/redis-use01/</link>
+      <pubDate>Tue, 30 Jul 2019 18:59:42 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2019/redis-use01/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java读取文件</title>
+      <link>http://duramisu.github.io/2019/java-readfile/</link>
+      <pubDate>Mon, 08 Jul 2019 00:40:35 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2019/java-readfile/</guid>
+      <description>import java.io.BufferedReader; import java.io.File; import java.io.FileReader; import java.io.IOException; /** * 读取文件内容，这里只是将文件读取，打印出具体数据，可以根据自己的情况，修改代码 * @author duyq * */ public class ReadFilesTest { public static void main(String[] args) { //按行读取文件 ReadFilesTest readFilesTest = new ReadFilesTest(&amp;quot;/Users/duyq/1.txt&amp;quot;); readFilesTest.readFileByLines(); } private String filePath;//文件路径，类似（在osx：/Users/duyq/1.txt，windows：c:/duyq/1.txt） private ReadFilesTest(String filePath) { this.filePath = filePath; } /** * 按行读取文件 * * @return */ public void readFileByLines() { File file = new File(this.filePath); //判断文件是否存在 if (!file.exists()) { System.out.println(this.filePath + &amp;quot; 文件不存在。&amp;quot;); } BufferedReader reader = null; try { reader = new BufferedReader(new FileReader(file)); String tempString = &amp;quot;&amp;quot;; while ((tempString = reader.</description>
+    </item>
+    
+    <item>
+      <title>windows安装oracle-odbc驱动错误原因</title>
+      <link>http://duramisu.github.io/2019/powerdesigner-oracle-jdbc/</link>
+      <pubDate>Sat, 06 Jul 2019 22:22:21 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2019/powerdesigner-oracle-jdbc/</guid>
+      <description>在windows7上准备使用powerdesigner16连接oracle逆向生成表结构，确发现一直无法连接oracle，其原因是本机没有ODBC驱动。
+第一步 安装oracle11g客户端，这里是具体安装方式：http://www.javaxxz.com/thread-365414-1-1.html
+第二步 配置ODBC，其中要注意的地方，ODBC驱动分为32位和64位两种。
+你是64位电脑，里面会有2个ODBC程序，一个64位，一个32位。
+C:\Windows\SysWOW64\odbcad32.exe 是32位的ODBC。
+C:\Windows\System32\odbcad32.exe 是64位ODBC（你没看错，64位居然在system32中！）
+安装32位Oracle Client软件后，会自动安装32位的驱动程序。
+安装64位Oracle Client软件后，会自动安装64位的驱动程序。</description>
+    </item>
+    
+    <item>
+      <title>tomcat跨域处理</title>
+      <link>http://duramisu.github.io/2019/tomcat-cros/</link>
+      <pubDate>Sat, 06 Jul 2019 22:13:02 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2019/tomcat-cros/</guid>
+      <description>** 修改tomcat的web.xml配置文件（apache-tomcat-8.5.16\conf\web.xml）在web-app标签下添加如下代码 **
+&amp;lt;filter&amp;gt; &amp;lt;filter-name&amp;gt;CorsFilter&amp;lt;/filter-name&amp;gt; &amp;lt;filter-class&amp;gt;org.apache.catalina.filters.CorsFilter&amp;lt;/filter-class&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.allowed.origins&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;*&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.allowed.methods&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;GET,POST,HEAD,OPTIONS,PUT&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.allowed.headers&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.exposed.headers&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;Access-Control-Allow-Origin,Access-Control-Allow-Credentials&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.support.credentials&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;true&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.preflight.maxage&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;10&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;/filter&amp;gt; &amp;lt;filter-mapping&amp;gt; &amp;lt;filter-name&amp;gt;CorsFilter&amp;lt;/filter-name&amp;gt; &amp;lt;url-pattern&amp;gt;/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/filter-mapping&amp;gt;  同时增加两个jar包到apache-tomcat-8.5.16\lib下： cros-filter-1.7jar java-property-utils-1.9.jar</description>
+    </item>
+    
+    <item>
+      <title>手写Spring事务注解</title>
+      <link>http://duramisu.github.io/2017/spring-annotation/</link>
+      <pubDate>Thu, 02 Mar 2017 22:50:52 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2017/spring-annotation/</guid>
+      <description> 目标  了解spring aop编程 使用aop切面编程手写事务注解  </description>
+    </item>
+    
+    <item>
+      <title>Java并发编程基础（一）</title>
+      <link>http://duramisu.github.io/2017/java-concurrent-01/</link>
+      <pubDate>Mon, 27 Feb 2017 22:50:52 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2017/java-concurrent-01/</guid>
+      <description>目标：  掌握并发编程中变量可见性问题 掌握造成线程安全、变量可见性问题的原因 掌握volatile关键字的用途、使用场景  如何在多个线程中共享数据，让变量可见？  使用final修饰变量(不可变变量) 使用synchronized同步代码块  import java.util.concurrent.TimeUnit; /** * @ClassName VisibilityDemo * @Description * @Author 夕 * @Date 2016-07-27 23:07 * @Version V1.0 **/ public class VisibilityDemo { //状态标识 private static boolean is = true; public static void main(String[] args) { new Thread(new Runnable() { @Override public void run() { int i=0; while (VisibilityDemo.is){ synchronized (this){ i++; } } System.out.println(&amp;quot;i===============&amp;gt;&amp;quot;+i); } }).start(); try { TimeUnit.</description>
+    </item>
+    
+    <item>
+      <title>设计模式-单例模式</title>
+      <link>http://duramisu.github.io/2017/design-pattern/</link>
+      <pubDate>Mon, 27 Feb 2017 22:50:52 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2017/design-pattern/</guid>
+      <description>/** * @ClassName SingleDemo * @Description 多线程高并发下的单例模式 * @Author 夕 * @Date 2016-07-27 20:58 * @Version V1.0 **/ public class Singleton { // volatile关键字主要的作用是（保证变量在多线程中的可见性），当第一个线程创建了Singleton对象后，但是还没有走完， // Singleton就是对外可见的，后续再来的线程看到已经创建，就无需进入第一个判断中，直接返回Singleton对象 private static volatile Singleton instance; //让构造函数私有化，这样该类就不会被实例化 private Singleton(){ } public static Singleton getIntance(){ //第一个判断空，如果instince是空的，若同时有100个线程访问 if(instance==null){ //使用synchronized同步代码块，加锁，其中一个线程进入，其它线程等待 synchronized (Singleton.class){ if (instance==null){ instance = new Singleton(); //代码1 //代码2 } } } return instance; } }  </description>
+    </item>
+    
+  </channel>
+</rss>

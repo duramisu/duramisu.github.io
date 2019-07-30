@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Sqyq</title>
+    <link>http://duramisu.github.io/categories/</link>
+    <description>Recent content in Categories on Sqyq</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Jul 2019 00:40:35 +0800</lastBuildDate>
+    
+	<atom:link href="http://duramisu.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>java</title>
+      <link>http://duramisu.github.io/categories/java/</link>
+      <pubDate>Mon, 08 Jul 2019 00:40:35 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oracle</title>
+      <link>http://duramisu.github.io/categories/oracle/</link>
+      <pubDate>Sat, 06 Jul 2019 22:22:21 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/categories/oracle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tomcat</title>
+      <link>http://duramisu.github.io/categories/tomcat/</link>
+      <pubDate>Sat, 06 Jul 2019 22:13:02 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/categories/tomcat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring</title>
+      <link>http://duramisu.github.io/categories/spring/</link>
+      <pubDate>Thu, 02 Mar 2017 22:50:52 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/categories/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>设计模式</title>
+      <link>http://duramisu.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 27 Feb 2017 22:50:52 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

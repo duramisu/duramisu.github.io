@@ -14,7 +14,36 @@
       <pubDate>Tue, 30 Jul 2019 19:42:01 +0800</pubDate>
       
       <guid>http://duramisu.github.io/2019/redis-use02/</guid>
-      <description></description>
+      <description>
+
+&lt;p&gt;123&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;VisibilityDemo.is,被设置为false了
+i===============&amp;gt;84562795
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;VisibilityDemo.is,被设置为false了
+VisibilityDemo.is,被设置为false了
+VisibilityDemo.is,被设置为false了
+VisibilityDemo.is,被设置为false了&lt;/code&gt;
+&amp;gt;123
+&amp;gt;&amp;gt;&amp;gt;123
+&amp;gt;&amp;gt;&amp;gt;&amp;gt;123&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;123&#34;&gt;123&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;flow
+st=&amp;gt;start: 开始
+op=&amp;gt;operation: My Operation
+cond=&amp;gt;condition: Yes or No?
+e=&amp;gt;end
+st-&amp;gt;op-&amp;gt;cond
+cond(yes)-&amp;gt;e
+cond(no)-&amp;gt;op
+&amp;amp;&lt;/code&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -257,6 +286,235 @@ java-property-utils-1.9.jar&lt;/p&gt;
 &lt;li&gt;了解spring aop编程&lt;/li&gt;
 &lt;li&gt;使用aop切面编程手写事务注解&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h2 id=&#34;aop是什么&#34;&gt;aop是什么&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;AOP（Aspect Orient Programming），作为面向对象编程的一种补充，广泛应用于处理一些具有横切性质的系统级服务，如事务管理、安全检查、缓存、对象池管理等。
+AOP 实现的关键就在于 AOP 框架自动创建的 AOP 代理，AOP 代理则可分为静态代理和动态代理两大类，其中静态代理是指使用 AOP 框架提供的命令进行编译，从而在编译阶段就可生成 AOP 代理类，因此也称为编译时增强；而动态代理则在运行时借助于 JDK 动态代理、CGLIB 等在内存中“临时”生成 AOP 动态代理类，因此也被称为运行时增强。
+
+AOP相关的概念：
+1） Aspect ：切面，切入系统的一个切面。比如事务管理是一个切面，权限管理也是一个切面；
+2） Join point ：连接点，也就是可以进行横向切入的位置；
+3） Advice ：通知，切面在某个连接点执行的操作(分为: Before advice , After returning advice , After throwing advice , After (finally) advice , Around advice )；
+4） Pointcut ：切点，符合切点表达式的连接点，也就是真正被切入的地方；
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;aop使用场景&#34;&gt;aop使用场景&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;Authentication 权限
+Caching 缓存
+Transactions 事务
+Logs 日志记录
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;为什么要用aop&#34;&gt;为什么要用aop&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;切面的内容可以复用
+避免使用Proxy、CGLIB生成代理，这方面的工作全部框架去实现，开发者可以专注于切面内容本身
+代码与代码之间没有耦合，如果拦截的方法有变化修改配置文件即可
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;例子-springboot中手写aop事务注解&#34;&gt;例子 springboot中手写aop事务注解&lt;/h2&gt;
+
+&lt;p&gt;以下代码实现数据库插入的时候事务回滚&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import java.lang.annotation.*;
+
+/**
+ * @ClassName SqTransactional
+ * @Description
+ * @Author 夕
+ * @Date 2019-08-10 23:41
+ * @Version V1.0
+ **/
+@Retention(RetentionPolicy.RUNTIME)//jvm运行的时候都有效
+@Target(ElementType.METHOD)//主要实现方法级别的控制
+public @interface SqTransactional {
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;实现方法中使用的事务注解：SqTransactional&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;/**
+ * @ClassName SqTransactionalManager
+ * @Description
+ * @Author 夕
+ * @Date 2019-08-11 00:07
+ * @Version V1.0
+ **/
+public class SqTransactionalManager {
+    public static  ThreadLocal&amp;lt;Connection&amp;gt; CONN_MANAGER = new ThreadLocal&amp;lt;&amp;gt;();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用ThreadLocal维护数据库连接Connection，保证每一个线程中的数据库连接是唯一的，这样事务就是唯一的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
+
+/**
+ * @ClassName SqTransactionAspect
+ * @Description AOP编程，功能增强
+ * @Author 夕
+ * @Date 2019-08-11 00:10
+ * @Version V1.0
+ **/
+@Component
+@Aspect
+public class SqTransactionAspect {
+    @Autowired
+    DataSource dataSource;
+
+
+    //环绕增强，在方法的执行前后进行增强
+    @Around(&amp;quot;@annotation(com.sqyq.springbootaoplearn.amy.annotation.SqTransactional)&amp;quot;)
+    public  Object doTran(ProceedingJoinPoint joinPoint) throws Throwable {
+        Object result = null;
+        //开启事务
+        Connection conn = dataSource.getConnection();
+        conn.setAutoCommit(false);
+        SqTransactionalManager.CONN_MANAGER.set(conn);
+        System.out.println(&amp;quot;执行前开启====================事务&amp;quot;);
+        try {
+            result = joinPoint.proceed();//AOP控制增强对象的执行
+            conn.commit();
+            System.out.println(&amp;quot;事务提交&amp;quot;);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(&amp;quot;事务回滚-------&amp;quot;);
+            conn.rollback();
+
+        }finally {
+            conn.close();
+            SqTransactionalManager.CONN_MANAGER.set(null);
+        }
+        System.out.println(&amp;quot;执行后执行==================&amp;quot;);
+        return result;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;AOP编程，功能增强，实现方法环绕增强，只要是方法上使用了@SqTransactional的注解，都会调用到该方法增强，实现事务提交回滚的功能&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import com.sqyq.springbootaoplearn.amy.annotation.SqTransactionalManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.Statement;
+
+/**
+ * @ClassName Sqjdbctemplate
+ * @Description
+ * @Author 夕
+ * @Date 2019-08-10 23:24
+ * @Version V1.0
+ **/
+@Component
+public class Sqjdbctemplate {
+    @Autowired
+    DataSource dataSource;
+
+    //jdb提交代码
+    public void execute(String sql) throws Exception {
+        Connection conn = SqTransactionalManager.CONN_MANAGER.get();
+        if(conn==null){
+            conn = dataSource.getConnection();
+        }
+        Statement stat = conn.createStatement();
+        stat.execute(sql);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;数据库连接类&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import com.sqyq.springbootaoplearn.amy.annotation.SqTransactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+ * @ClassName UserService
+ * @Description
+ * @Author 夕
+ * @Date 2019-08-10 22:53
+ * @Version V1.0
+ **/
+@Service
+public class UserService {
+    @Autowired
+    Sqjdbctemplate sqJdbcTemplate;
+
+    @SqTransactional
+    public void doInsert() throws Exception {
+        System.out.println(&amp;quot;具体数据库插入的方法执行中&amp;quot;);
+        sqJdbcTemplate.execute(&amp;quot;INSERT INTO tb_user VALUES (&#39;10007&#39;, &#39;777&#39;)&amp;quot;);
+        int i = 1/0;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;简单的用于测试的service&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+import com.sqyq.springbootaoplearn.amy.service.UserService;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.io.IOException;
+
+/**
+ * @ClassName SpringBootAopMyTest
+ * @Description
+ * @Author 夕
+ * @Date 2019-08-10 23:10
+ * @Version V1.0
+ **/
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SpringBootAopMyTest {
+    @Autowired
+    UserService userService;
+
+    @Before
+    public void start() throws IOException {
+        System.out.println(&amp;quot;开始测试##############&amp;quot;);
+    }
+
+    @After
+    public void finish() {
+        System.out.println(&amp;quot;结束测试##############&amp;quot;);
+    }
+
+    @Test
+    public void doInsert() throws Exception {
+        // 订单号生成
+        userService.doInsert();
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;测试类，运行doInsert()，如下：
+&lt;img src=&#34;http://pvclhthry.bkt.clouddn.com/mweb/2019%2008%2011/15655350507669.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;使用spring-aop编程，可以在事务控制，日志记录等等应运场景下，只需要在方法或者类上加一个注解，就可以很方便的实现我们的功能，提升了代码复用度，有效的解耦。&lt;/p&gt;
 </description>
     </item>
     

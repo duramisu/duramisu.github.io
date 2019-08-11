@@ -289,29 +289,33 @@ java-property-utils-1.9.jar&lt;/p&gt;
 
 &lt;h2 id=&#34;aop是什么&#34;&gt;aop是什么&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;AOP（Aspect Orient Programming），作为面向对象编程的一种补充，广泛应用于处理一些具有横切性质的系统级服务，如事务管理、安全检查、缓存、对象池管理等。
-AOP 实现的关键就在于 AOP 框架自动创建的 AOP 代理，AOP 代理则可分为静态代理和动态代理两大类，其中静态代理是指使用 AOP 框架提供的命令进行编译，从而在编译阶段就可生成 AOP 代理类，因此也称为编译时增强；而动态代理则在运行时借助于 JDK 动态代理、CGLIB 等在内存中“临时”生成 AOP 动态代理类，因此也被称为运行时增强。
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;AOP（Aspect Orient Programming），作为面向对象编程的一种补充，广泛应用于处理一些具有横切性质的系统级服务，
+如事务管理、安全检查、缓存、对象池管理等。AOP 实现的关键就在于 AOP 框架自动创建的 AOP 代理，AOP 代理则可分
+为静态代理和动态代理两大类，其中静态代理是指使用 AOP 框架提供的命令进行编译，从而在编译阶段就可生成 AOP 代理
+类，因此也称为编译时增强；而动态代理则在运行时借助于JDK动态代理、CGLIB 等在内存中“临时”生成 AOP 动态代理类，
+因此也被称为运行时增强。
+&lt;/code&gt;&lt;/pre&gt;
 
-AOP相关的概念：
-1） Aspect ：切面，切入系统的一个切面。比如事务管理是一个切面，权限管理也是一个切面；
-2） Join point ：连接点，也就是可以进行横向切入的位置；
-3） Advice ：通知，切面在某个连接点执行的操作(分为: Before advice , After returning advice , After throwing advice , After (finally) advice , Around advice )；
-4） Pointcut ：切点，符合切点表达式的连接点，也就是真正被切入的地方；
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;    AOP相关的概念：
+    1） Aspect ：切面，切入系统的一个切面。比如事务管理是一个切面，权限管理也是一个切面；
+    2） Join point ：连接点，也就是可以进行横向切入的位置；
+    3） Advice ：通知，切面在某个连接点执行的操作(分为: Before advice , After returning advice , After throwing advice , After (finally) advice , Around advice )；
+    4） Pointcut ：切点，符合切点表达式的连接点，也就是真正被切入的地方；
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;aop使用场景&#34;&gt;aop使用场景&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;Authentication 权限
-Caching 缓存
-Transactions 事务
-Logs 日志记录
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;    Authentication 权限
+    Caching 缓存
+    Transactions 事务
+    Logs 日志记录
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;为什么要用aop&#34;&gt;为什么要用aop&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;切面的内容可以复用
-避免使用Proxy、CGLIB生成代理，这方面的工作全部框架去实现，开发者可以专注于切面内容本身
-代码与代码之间没有耦合，如果拦截的方法有变化修改配置文件即可
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;    切面的内容可以复用
+    避免使用Proxy、CGLIB生成代理，这方面的工作全部框架去实现，开发者可以专注于切面内容本身
+    代码与代码之间没有耦合，如果拦截的方法有变化修改配置文件即可
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;例子-springboot中手写aop事务注解&#34;&gt;例子 springboot中手写aop事务注解&lt;/h2&gt;

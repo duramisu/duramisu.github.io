@@ -6,10 +6,22 @@
     <description>Recent content in nosql on Sqyq</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Oct 2018 19:42:01 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 19:58:40 +0800</lastBuildDate>
     
 	<atom:link href="http://duramisu.github.io/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring(一)手写spring框架</title>
+      <link>http://duramisu.github.io/2019/spring-learn-01/</link>
+      <pubDate>Mon, 12 Aug 2019 19:58:40 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2019/spring-learn-01/</guid>
+      <description>目标     是什么  
+使用场景  
+为什么要用  
+例子  总结</description>
+    </item>
     
     <item>
       <title>Redis的客户端原理分析及实现</title>

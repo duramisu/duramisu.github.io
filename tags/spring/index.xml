@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>手写Spring事务注解</title>
-      <link>http://duramisu.github.io/2017/spring-annotation/</link>
+      <title>spring(二)手写Spring事务注解</title>
+      <link>http://duramisu.github.io/2017/spring-annotation-02/</link>
       <pubDate>Thu, 02 Mar 2017 22:50:52 +0800</pubDate>
       
-      <guid>http://duramisu.github.io/2017/spring-annotation/</guid>
+      <guid>http://duramisu.github.io/2017/spring-annotation-02/</guid>
       <description>目标  了解spring aop编程 使用aop切面编程手写事务注解  aop是什么 AOP（Aspect Orient Programming），作为面向对象编程的一种补充，广泛应用于处理一些具有横切性质的系统级服务， 如事务管理、安全检查、缓存、对象池管理等。AOP 实现的关键就在于 AOP 框架自动创建的 AOP 代理，AOP 代理则可分 为静态代理和动态代理两大类，其中静态代理是指使用 AOP 框架提供的命令进行编译，从而在编译阶段就可生成 AOP 代理 类，因此也称为编译时增强；而动态代理则在运行时借助于JDK动态代理、CGLIB 等在内存中“临时”生成 AOP 动态代理类， 因此也被称为运行时增强。  AOP相关的概念： 1） Aspect ：切面，切入系统的一个切面。比如事务管理是一个切面，权限管理也是一个切面； 2） Join point ：连接点，也就是可以进行横向切入的位置； 3） Advice ：通知，切面在某个连接点执行的操作(分为: Before advice , After returning advice , After throwing advice , After (finally) advice , Around advice )； 4） Pointcut ：切点，符合切点表达式的连接点，也就是真正被切入的地方；  aop使用场景 Authentication 权限 Caching 缓存 Transactions 事务 Logs 日志记录  为什么要用aop 切面的内容可以复用 避免使用Proxy、CGLIB生成代理，这方面的工作全部框架去实现，开发者可以专注于切面内容本身 代码与代码之间没有耦合，如果拦截的方法有变化修改配置文件即可  例子 springboot中手写aop事务注解 以下代码实现数据库插入的时候事务回滚</description>
     </item>
     

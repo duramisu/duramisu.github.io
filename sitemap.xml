@@ -2,31 +2,9 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>http://duramisu.github.io/about/</loc>
-      
-      <lastmod>2019-07-29T21:33:48+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>http://duramisu.github.io/</loc>
-      
-      <lastmod>2019-07-29T21:33:48+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
       <loc>http://duramisu.github.io/categories/</loc>
       
-      <lastmod>2018-10-30T19:42:01+08:00</lastmod>
+      <lastmod>2019-08-12T19:58:40+08:00</lastmod>
       
       
       
@@ -38,7 +16,7 @@
     <url>
       <loc>http://duramisu.github.io/posts/</loc>
       
-      <lastmod>2018-10-30T19:42:01+08:00</lastmod>
+      <lastmod>2019-08-12T19:58:40+08:00</lastmod>
       
       
       
@@ -48,9 +26,9 @@
     </url>
   
     <url>
-      <loc>http://duramisu.github.io/2018/redis-use02/</loc>
+      <loc>http://duramisu.github.io/2019/spring-learn-01/</loc>
       
-      <lastmod>2018-10-30T19:42:01+08:00</lastmod>
+      <lastmod>2019-08-12T19:58:40+08:00</lastmod>
       
       
       
@@ -58,9 +36,21 @@
     </url>
   
     <url>
+      <loc>http://duramisu.github.io/</loc>
+      
+      <lastmod>2019-08-12T19:58:40+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>http://duramisu.github.io/tags/</loc>
       
-      <lastmod>2018-10-30T19:42:01+08:00</lastmod>
+      <lastmod>2019-08-12T19:58:40+08:00</lastmod>
       
       
       
@@ -72,19 +62,7 @@
     <url>
       <loc>http://duramisu.github.io/tags/nosql/</loc>
       
-      <lastmod>2018-10-30T19:42:01+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>http://duramisu.github.io/tags/redis/</loc>
-      
-      <lastmod>2018-10-30T19:42:01+08:00</lastmod>
+      <lastmod>2019-08-12T19:58:40+08:00</lastmod>
       
       
       
@@ -96,11 +74,43 @@
     <url>
       <loc>http://duramisu.github.io/categories/redis/</loc>
       
-      <lastmod>2018-10-30T19:42:01+08:00</lastmod>
+      <lastmod>2019-08-12T19:58:40+08:00</lastmod>
       
       
       
       <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://duramisu.github.io/tags/redis/</loc>
+      
+      <lastmod>2019-08-12T19:58:40+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://duramisu.github.io/about/</loc>
+      
+      <lastmod>2019-07-29T21:33:48+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://duramisu.github.io/2018/redis-use02/</loc>
+      
+      <lastmod>2018-10-30T19:42:01+08:00</lastmod>
+      
+      
       
       
     </url>
@@ -140,18 +150,6 @@
     </url>
   
     <url>
-      <loc>http://duramisu.github.io/tags/spring/</loc>
-      
-      <lastmod>2017-03-02T22:50:52+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
       <loc>http://duramisu.github.io/categories/spring/</loc>
       
       <lastmod>2017-03-02T22:50:52+08:00</lastmod>
@@ -164,7 +162,19 @@
     </url>
   
     <url>
-      <loc>http://duramisu.github.io/2017/spring-annotation/</loc>
+      <loc>http://duramisu.github.io/tags/spring/</loc>
+      
+      <lastmod>2017-03-02T22:50:52+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://duramisu.github.io/2017/spring-annotation-02/</loc>
       
       <lastmod>2017-03-02T22:50:52+08:00</lastmod>
       
@@ -220,7 +230,7 @@
     </url>
   
     <url>
-      <loc>http://duramisu.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+      <loc>http://duramisu.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
       
       <lastmod>2017-02-27T22:50:52+08:00</lastmod>
       
@@ -232,7 +242,7 @@
     </url>
   
     <url>
-      <loc>http://duramisu.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+      <loc>http://duramisu.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
       
       <lastmod>2017-02-27T22:50:52+08:00</lastmod>
       
@@ -264,7 +274,7 @@
     </url>
   
     <url>
-      <loc>http://duramisu.github.io/tags/tomcat/</loc>
+      <loc>http://duramisu.github.io/categories/tomcat/</loc>
       
       <lastmod>2016-01-06T22:13:02+08:00</lastmod>
       
@@ -276,7 +286,7 @@
     </url>
   
     <url>
-      <loc>http://duramisu.github.io/categories/tomcat/</loc>
+      <loc>http://duramisu.github.io/tags/tomcat/</loc>
       
       <lastmod>2016-01-06T22:13:02+08:00</lastmod>
       
@@ -320,7 +330,7 @@
     </url>
   
     <url>
-      <loc>http://duramisu.github.io/tags/oracle/</loc>
+      <loc>http://duramisu.github.io/categories/oracle/</loc>
       
       <lastmod>2014-07-06T22:22:21+08:00</lastmod>
       
@@ -332,7 +342,7 @@
     </url>
   
     <url>
-      <loc>http://duramisu.github.io/categories/oracle/</loc>
+      <loc>http://duramisu.github.io/tags/oracle/</loc>
       
       <lastmod>2014-07-06T22:22:21+08:00</lastmod>
       

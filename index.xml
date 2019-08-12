@@ -5,8 +5,49 @@
     <description>Recent content in Sqyq on Sqyq</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jul 2019 21:33:48 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 19:58:40 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Spring(一)手写spring框架</title>
+      <link>http://duramisu.github.io/2019/spring-learn-01/</link>
+      <pubDate>Mon, 12 Aug 2019 19:58:40 +0800</pubDate>
+      
+      <guid>http://duramisu.github.io/2019/spring-learn-01/</guid>
+      <description>
+
+&lt;h1 id=&#34;目标&#34;&gt;目标&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;是什么&#34;&gt;是什么&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;使用场景&#34;&gt;使用场景&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;为什么要用&#34;&gt;为什么要用&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;例子&#34;&gt;例子&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>About</title>
@@ -292,11 +333,11 @@ nosql读取速度快，对较大数据处理快
     </item>
     
     <item>
-      <title>手写Spring事务注解</title>
-      <link>http://duramisu.github.io/2017/spring-annotation/</link>
+      <title>spring(二)手写Spring事务注解</title>
+      <link>http://duramisu.github.io/2017/spring-annotation-02/</link>
       <pubDate>Thu, 02 Mar 2017 22:50:52 +0800</pubDate>
       
-      <guid>http://duramisu.github.io/2017/spring-annotation/</guid>
+      <guid>http://duramisu.github.io/2017/spring-annotation-02/</guid>
       <description>
 
 &lt;h1 id=&#34;目标&#34;&gt;目标&lt;/h1&gt;

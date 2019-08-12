@@ -6,17 +6,17 @@
     <description>Recent content in tomcat on Sqyq</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Jul 2019 22:13:02 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jan 2016 22:13:02 +0800</lastBuildDate>
     
 	<atom:link href="http://duramisu.github.io/categories/tomcat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>tomcat跨域处理</title>
-      <link>http://duramisu.github.io/2019/tomcat-cros/</link>
-      <pubDate>Sat, 06 Jul 2019 22:13:02 +0800</pubDate>
+      <link>http://duramisu.github.io/2016/tomcat-cros/</link>
+      <pubDate>Wed, 06 Jan 2016 22:13:02 +0800</pubDate>
       
-      <guid>http://duramisu.github.io/2019/tomcat-cros/</guid>
+      <guid>http://duramisu.github.io/2016/tomcat-cros/</guid>
       <description>** 修改tomcat的web.xml配置文件（apache-tomcat-8.5.16\conf\web.xml）在web-app标签下添加如下代码 **
 &amp;lt;filter&amp;gt; &amp;lt;filter-name&amp;gt;CorsFilter&amp;lt;/filter-name&amp;gt; &amp;lt;filter-class&amp;gt;org.apache.catalina.filters.CorsFilter&amp;lt;/filter-class&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.allowed.origins&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;*&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.allowed.methods&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;GET,POST,HEAD,OPTIONS,PUT&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.allowed.headers&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.exposed.headers&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;Access-Control-Allow-Origin,Access-Control-Allow-Credentials&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.support.credentials&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;true&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;cors.preflight.maxage&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;10&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;/filter&amp;gt; &amp;lt;filter-mapping&amp;gt; &amp;lt;filter-name&amp;gt;CorsFilter&amp;lt;/filter-name&amp;gt; &amp;lt;url-pattern&amp;gt;/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/filter-mapping&amp;gt;  同时增加两个jar包到apache-tomcat-8.5.16\lib下： cros-filter-1.7jar java-property-utils-1.9.jar</description>
     </item>

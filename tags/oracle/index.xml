@@ -6,17 +6,17 @@
     <description>Recent content in oracle on Sqyq</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Jul 2019 22:22:21 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 Jul 2014 22:22:21 +0800</lastBuildDate>
     
 	<atom:link href="http://duramisu.github.io/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>windows安装oracle-odbc驱动错误原因</title>
-      <link>http://duramisu.github.io/2019/powerdesigner-oracle-jdbc/</link>
-      <pubDate>Sat, 06 Jul 2019 22:22:21 +0800</pubDate>
+      <link>http://duramisu.github.io/2014/powerdesigner-oracle-jdbc/</link>
+      <pubDate>Sun, 06 Jul 2014 22:22:21 +0800</pubDate>
       
-      <guid>http://duramisu.github.io/2019/powerdesigner-oracle-jdbc/</guid>
+      <guid>http://duramisu.github.io/2014/powerdesigner-oracle-jdbc/</guid>
       <description>在windows7上准备使用powerdesigner16连接oracle逆向生成表结构，确发现一直无法连接oracle，其原因是本机没有ODBC驱动。
 第一步 安装oracle11g客户端，这里是具体安装方式：http://www.javaxxz.com/thread-365414-1-1.html
 第二步 配置ODBC，其中要注意的地方，ODBC驱动分为32位和64位两种。

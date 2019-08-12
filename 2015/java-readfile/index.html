@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="http://duramisu.github.io/2016/tomcat-cros/" />
-  <link rel="next" href="http://duramisu.github.io/2017/java-concurrent-01/" />
-  <link rel="canonical" href="http://duramisu.github.io/2017/design-pattern/" />
+  <link rel="prev" href="http://duramisu.github.io/2014/powerdesigner-oracle-jdbc/" />
+  <link rel="next" href="http://duramisu.github.io/2016/tomcat-cros/" />
+  <link rel="canonical" href="http://duramisu.github.io/2015/java-readfile/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           设计模式-单例模式 | Sqyq
+           Java读取文件 | Sqyq
        
   </title>
-  <meta name="title" content="设计模式-单例模式 | Sqyq">
+  <meta name="title" content="Java读取文件 | Sqyq">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,21 +44,21 @@
          "@id": "http:\/\/duramisu.github.io\/"
     },
     "articleSection" : "posts",
-    "name" : "设计模式-单例模式",
-    "headline" : "设计模式-单例模式",
-    "description" : "\/** * @ClassName SingleDemo * @Description 多线程高并发下的单例模式 * @Author 夕 * @Date 2016-07-27 20:58 * @Version V1.0 **\/ public class Singleton { \/\/ volatile关键字主要的作用是（保证变量在多线程中的可见性），当第一个线程创建了Singleton对象后，但是还没有走完， \/\/ Singleton就是对外可见的，后续再来的线程看到已经创建，就无需进入第一个判断中，直接返回Singleton对象 private static volatile Singleton instance; \/\/让构造函数私有化，这样该类就不会被实例化 private Singleton(){ } public static Singleton getIntance(){ \/\/第一个判断空，如果instince是空的，若同时有100个线程访问 if(instance==null){ \/\/使用synchronized同步代码块，加锁，其中一个线程进入，其它线程等待 synchronized (Singleton.class){ if (instance==null){ instance = new Singleton(); \/\/代码1 \/\/代码2 } } } return instance; } }  ",
+    "name" : "Java读取文件",
+    "headline" : "Java读取文件",
+    "description" : "import java.io.BufferedReader; import java.io.File; import java.io.FileReader; import java.io.IOException; \/** * 读取文件内容，这里只是将文件读取，打印出具体数据，可以根据自己的情况，修改代码 * @author duyq * *\/ public class ReadFilesTest { public static void main(String[] args) { \/\/按行读取文件 ReadFilesTest readFilesTest = new ReadFilesTest(\x26quot;\/Users\/duyq\/1.txt\x26quot;); readFilesTest.readFileByLines(); } private String filePath;\/\/文件路径，类似（在osx：\/Users\/duyq\/1.txt，windows：c:\/duyq\/1.txt） private ReadFilesTest(String filePath) { this.filePath = filePath; } \/** * 按行读取文件 * * @return *\/ public void readFileByLines() { File file = new File(this.filePath); \/\/判断文件是否存在 if (!file.exists()) { System.out.println(this.filePath \x2b \x26quot; 文件不存在。\x26quot;); } BufferedReader reader = null; try { reader = new BufferedReader(new FileReader(file)); String tempString = \x26quot;\x26quot;; while ((tempString = reader.",
     "inLanguage" : "en-us",
     "author" : "Mi.Sqyq",
     "creator" : "Mi.Sqyq",
     "publisher": "Mi.Sqyq",
     "accountablePerson" : "Mi.Sqyq",
     "copyrightHolder" : "Mi.Sqyq",
-    "copyrightYear" : "2017",
-    "datePublished": "2017-02-27 22:50:52 \x2b0800 CST",
-    "dateModified" : "2017-02-27 22:50:52 \x2b0800 CST",
-    "url" : "http:\/\/duramisu.github.io\/2017\/design-pattern\/",
-    "wordCount" : "59",
-    "keywords" : [ "java","设计模式","单例", "Sqyq"]
+    "copyrightYear" : "2015",
+    "datePublished": "2015-01-08 00:40:35 \x2b0800 CST",
+    "dateModified" : "2015-01-08 00:40:35 \x2b0800 CST",
+    "url" : "http:\/\/duramisu.github.io\/2015\/java-readfile\/",
+    "wordCount" : "135",
+    "keywords" : [ "java","io", "Sqyq"]
 }
 </script>
 
@@ -116,16 +116,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">设计模式-单例模式</h1>
+        <h1 class="post-title" itemprop="name headline">Java读取文件</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="http://duramisu.github.io/" rel="author">Mi.Sqyq</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2017-02-27 itemprop="datePublished">February 27, 2017</time>
+                on <time datetime=2015-01-08 itemprop="datePublished">January 8, 2015</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="http://duramisu.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
+                        <a href="http://duramisu.github.io/categories/java/"> java </a>
                         
                 </span>
         </div>
@@ -146,38 +146,112 @@
           
           
 
-          <pre><code class="language-java">/**
- * @ClassName SingleDemo
- * @Description 多线程高并发下的单例模式
- * @Author 夕
- * @Date 2016-07-27 20:58
- * @Version V1.0
- **/
-public class Singleton {
+          <pre><code class="language-java">import java.io.BufferedReader;
 
-    // volatile关键字主要的作用是（保证变量在多线程中的可见性），当第一个线程创建了Singleton对象后，但是还没有走完，
-    // Singleton就是对外可见的，后续再来的线程看到已经创建，就无需进入第一个判断中，直接返回Singleton对象
-    private static volatile Singleton instance;
+import java.io.File;
 
-    //让构造函数私有化，这样该类就不会被实例化
-    private Singleton(){
+import java.io.FileReader;
+
+import java.io.IOException;
+
+/**
+
+ * 读取文件内容，这里只是将文件读取，打印出具体数据，可以根据自己的情况，修改代码
+
+ * @author duyq
+
+ *
+
+ */
+
+public class ReadFilesTest {
+
+ public static void main(String[] args) {
+
+  //按行读取文件
+
+  ReadFilesTest readFilesTest = new ReadFilesTest(&quot;/Users/duyq/1.txt&quot;);
+
+  readFilesTest.readFileByLines();
+
+ }
+
+ private String filePath;//文件路径，类似（在osx：/Users/duyq/1.txt，windows：c:/duyq/1.txt）
+
+ private ReadFilesTest(String filePath) {
+
+  this.filePath = filePath;
+
+ }
+
+ /**
+
+ * 按行读取文件
+
+ * 
+
+ * @return
+
+ */
+
+ public void readFileByLines() {
+
+  File file = new File(this.filePath);
+
+  //判断文件是否存在
+
+  if (!file.exists()) {
+
+   System.out.println(this.filePath + &quot;  文件不存在。&quot;);
+
+  }
+
+  BufferedReader reader = null;
+
+  try {
+
+   reader = new BufferedReader(new FileReader(file));
+
+   String tempString = &quot;&quot;;
+
+   while ((tempString = reader.readLine()) != null) {
+
+    System.out.println( new String(tempString.getBytes(&quot;GBK&quot;),&quot;UTF-8&quot;));
+
+   }
+
+   reader.close();
+
+  } catch (IOException e) {
+
+   e.printStackTrace();
+
+   if (reader != null)
+
+    try {
+
+     reader.close();
+
+    } catch (IOException localIOException1) {
 
     }
 
-    public static Singleton getIntance(){
-        //第一个判断空，如果instince是空的，若同时有100个线程访问
-        if(instance==null){
-            //使用synchronized同步代码块，加锁，其中一个线程进入，其它线程等待
-            synchronized (Singleton.class){
-                if (instance==null){
-                    instance = new Singleton();
-                    //代码1
-                    //代码2
-                }
-            }
-        }
-        return instance;
+  } finally {
+
+   if (reader != null)
+
+    try {
+
+     reader.close();
+
+    } catch (IOException localIOException2) {
+
     }
+
+  }
+
+ }
+
 }
 </code></pre>
 
@@ -194,7 +268,7 @@ public class Singleton {
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=http://duramisu.github.io/2017/design-pattern/>http://duramisu.github.io/2017/design-pattern/</span>
+                    <a href=http://duramisu.github.io/2015/java-readfile/>http://duramisu.github.io/2015/java-readfile/</span>
             </p>
             
              
@@ -213,11 +287,8 @@ public class Singleton {
             <span class="tag"><a href="http://duramisu.github.io/tags/java/">
                     #java</a></span>
             
-            <span class="tag"><a href="http://duramisu.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                    #设计模式</a></span>
-            
-            <span class="tag"><a href="http://duramisu.github.io/tags/%E5%8D%95%E4%BE%8B/">
-                    #单例</a></span>
+            <span class="tag"><a href="http://duramisu.github.io/tags/io/">
+                    #io</a></span>
             
             </section>
         
@@ -229,10 +300,10 @@ public class Singleton {
 
     <div class="post-nav">
         
-        <a href="http://duramisu.github.io/2016/tomcat-cros/" class="prev" rel="prev" title="tomcat跨域处理"><i class="iconfont icon-left"></i>&nbsp;tomcat跨域处理</a>
+        <a href="http://duramisu.github.io/2014/powerdesigner-oracle-jdbc/" class="prev" rel="prev" title="windows安装oracle-odbc驱动错误原因"><i class="iconfont icon-left"></i>&nbsp;windows安装oracle-odbc驱动错误原因</a>
          
         
-        <a href="http://duramisu.github.io/2017/java-concurrent-01/" class="next" rel="next" title="Java并发编程基础（一）">Java并发编程基础（一）&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="http://duramisu.github.io/2016/tomcat-cros/" class="next" rel="next" title="tomcat跨域处理">tomcat跨域处理&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

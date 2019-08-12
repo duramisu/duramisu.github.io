@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="http://duramisu.github.io/2016/tomcat-cros/" />
-  <link rel="next" href="http://duramisu.github.io/2017/java-concurrent-01/" />
-  <link rel="canonical" href="http://duramisu.github.io/2017/design-pattern/" />
+  
+  <link rel="next" href="http://duramisu.github.io/2015/java-readfile/" />
+  <link rel="canonical" href="http://duramisu.github.io/2014/powerdesigner-oracle-jdbc/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           设计模式-单例模式 | Sqyq
+           windows安装oracle-odbc驱动错误原因 | Sqyq
        
   </title>
-  <meta name="title" content="设计模式-单例模式 | Sqyq">
+  <meta name="title" content="windows安装oracle-odbc驱动错误原因 | Sqyq">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,21 +44,21 @@
          "@id": "http:\/\/duramisu.github.io\/"
     },
     "articleSection" : "posts",
-    "name" : "设计模式-单例模式",
-    "headline" : "设计模式-单例模式",
-    "description" : "\/** * @ClassName SingleDemo * @Description 多线程高并发下的单例模式 * @Author 夕 * @Date 2016-07-27 20:58 * @Version V1.0 **\/ public class Singleton { \/\/ volatile关键字主要的作用是（保证变量在多线程中的可见性），当第一个线程创建了Singleton对象后，但是还没有走完， \/\/ Singleton就是对外可见的，后续再来的线程看到已经创建，就无需进入第一个判断中，直接返回Singleton对象 private static volatile Singleton instance; \/\/让构造函数私有化，这样该类就不会被实例化 private Singleton(){ } public static Singleton getIntance(){ \/\/第一个判断空，如果instince是空的，若同时有100个线程访问 if(instance==null){ \/\/使用synchronized同步代码块，加锁，其中一个线程进入，其它线程等待 synchronized (Singleton.class){ if (instance==null){ instance = new Singleton(); \/\/代码1 \/\/代码2 } } } return instance; } }  ",
+    "name" : "windows安装oracle-odbc驱动错误原因",
+    "headline" : "windows安装oracle-odbc驱动错误原因",
+    "description" : "在windows7上准备使用powerdesigner16连接oracle逆向生成表结构，确发现一直无法连接oracle，其原因是本机没有ODBC驱动。\n第一步 安装oracle11g客户端，这里是具体安装方式：http:\/\/www.javaxxz.com\/thread-365414-1-1.html\n第二步 配置ODBC，其中要注意的地方，ODBC驱动分为32位和64位两种。\n你是64位电脑，里面会有2个ODBC程序，一个64位，一个32位。\nC:\\Windows\\SysWOW64\\odbcad32.exe 是32位的ODBC。\nC:\\Windows\\System32\\odbcad32.exe 是64位ODBC（你没看错，64位居然在system32中！）\n安装32位Oracle Client软件后，会自动安装32位的驱动程序。\n安装64位Oracle Client软件后，会自动安装64位的驱动程序。",
     "inLanguage" : "en-us",
     "author" : "Mi.Sqyq",
     "creator" : "Mi.Sqyq",
     "publisher": "Mi.Sqyq",
     "accountablePerson" : "Mi.Sqyq",
     "copyrightHolder" : "Mi.Sqyq",
-    "copyrightYear" : "2017",
-    "datePublished": "2017-02-27 22:50:52 \x2b0800 CST",
-    "dateModified" : "2017-02-27 22:50:52 \x2b0800 CST",
-    "url" : "http:\/\/duramisu.github.io\/2017\/design-pattern\/",
-    "wordCount" : "59",
-    "keywords" : [ "java","设计模式","单例", "Sqyq"]
+    "copyrightYear" : "2014",
+    "datePublished": "2014-07-06 22:22:21 \x2b0800 CST",
+    "dateModified" : "2014-07-06 22:22:21 \x2b0800 CST",
+    "url" : "http:\/\/duramisu.github.io\/2014\/powerdesigner-oracle-jdbc\/",
+    "wordCount" : "14",
+    "keywords" : [ "oracle", "Sqyq"]
 }
 </script>
 
@@ -116,16 +116,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">设计模式-单例模式</h1>
+        <h1 class="post-title" itemprop="name headline">windows安装oracle-odbc驱动错误原因</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="http://duramisu.github.io/" rel="author">Mi.Sqyq</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2017-02-27 itemprop="datePublished">February 27, 2017</time>
+                on <time datetime=2014-07-06 itemprop="datePublished">July 6, 2014</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="http://duramisu.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"> 设计模式 </a>
+                        <a href="http://duramisu.github.io/categories/oracle/"> oracle </a>
                         
                 </span>
         </div>
@@ -146,40 +146,21 @@
           
           
 
-          <pre><code class="language-java">/**
- * @ClassName SingleDemo
- * @Description 多线程高并发下的单例模式
- * @Author 夕
- * @Date 2016-07-27 20:58
- * @Version V1.0
- **/
-public class Singleton {
+          <p>在windows7上准备使用powerdesigner16连接oracle逆向生成表结构，确发现一直无法连接oracle，其原因是本机没有ODBC驱动。</p>
 
-    // volatile关键字主要的作用是（保证变量在多线程中的可见性），当第一个线程创建了Singleton对象后，但是还没有走完，
-    // Singleton就是对外可见的，后续再来的线程看到已经创建，就无需进入第一个判断中，直接返回Singleton对象
-    private static volatile Singleton instance;
+<p>第一步 安装oracle11g客户端，这里是具体安装方式：<a href="http://www.javaxxz.com/thread-365414-1-1.html" rel="nofollow noreferrer" target="_blank">http://www.javaxxz.com/thread-365414-1-1.html</a></p>
 
-    //让构造函数私有化，这样该类就不会被实例化
-    private Singleton(){
+<p>第二步 配置ODBC，其中要注意的地方，ODBC驱动分为32位和64位两种。</p>
 
-    }
+<p>你是64位电脑，里面会有2个ODBC程序，一个64位，一个32位。</p>
 
-    public static Singleton getIntance(){
-        //第一个判断空，如果instince是空的，若同时有100个线程访问
-        if(instance==null){
-            //使用synchronized同步代码块，加锁，其中一个线程进入，其它线程等待
-            synchronized (Singleton.class){
-                if (instance==null){
-                    instance = new Singleton();
-                    //代码1
-                    //代码2
-                }
-            }
-        }
-        return instance;
-    }
-}
-</code></pre>
+<p>C:\Windows\SysWOW64\odbcad32.exe 是32位的ODBC。</p>
+
+<p>C:\Windows\System32\odbcad32.exe 是64位ODBC（你没看错，64位居然在system32中！）</p>
+
+<p>安装32位Oracle Client软件后，会自动安装32位的驱动程序。</p>
+
+<p>安装64位Oracle Client软件后，会自动安装64位的驱动程序。</p>
 
     </div>
 
@@ -194,7 +175,7 @@ public class Singleton {
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=http://duramisu.github.io/2017/design-pattern/>http://duramisu.github.io/2017/design-pattern/</span>
+                    <a href=http://duramisu.github.io/2014/powerdesigner-oracle-jdbc/>http://duramisu.github.io/2014/powerdesigner-oracle-jdbc/</span>
             </p>
             
              
@@ -210,14 +191,8 @@ public class Singleton {
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="http://duramisu.github.io/tags/java/">
-                    #java</a></span>
-            
-            <span class="tag"><a href="http://duramisu.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                    #设计模式</a></span>
-            
-            <span class="tag"><a href="http://duramisu.github.io/tags/%E5%8D%95%E4%BE%8B/">
-                    #单例</a></span>
+            <span class="tag"><a href="http://duramisu.github.io/tags/oracle/">
+                    #oracle</a></span>
             
             </section>
         
@@ -228,11 +203,9 @@ public class Singleton {
     </div>
 
     <div class="post-nav">
-        
-        <a href="http://duramisu.github.io/2016/tomcat-cros/" class="prev" rel="prev" title="tomcat跨域处理"><i class="iconfont icon-left"></i>&nbsp;tomcat跨域处理</a>
          
         
-        <a href="http://duramisu.github.io/2017/java-concurrent-01/" class="next" rel="next" title="Java并发编程基础（一）">Java并发编程基础（一）&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="http://duramisu.github.io/2015/java-readfile/" class="next" rel="next" title="Java读取文件">Java读取文件&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

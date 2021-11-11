@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		Linux下PostgreSql源码安装 | 
+	 
+	xhs.blog
+	</title>
+	
+	<!-- keywords,description -->
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.baidu.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "https://github.com/duramisu";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
+
+	
+	
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">xhs.blog</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+	
+		<li class="menu-item">
+			<a href="/tags" class="menu-item-link">标签</a>
+		</li>
+	
+
+	
+		<li class="menu-item">
+			<a href="/categories" class="menu-item-link">分类</a>
+		</li>
+	
+
+		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>
+		<li class="menu-item">
+			<a href="https://github.com/wujun234" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										01 数据结构与算法
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/01%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+										redis常用命令
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/01%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										02 Java知识体系
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/02%20Java%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03 web框架
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/03%20web%E6%A1%86%E6%9E%B6/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										04 数据库
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										PostgreSql
+									</a>
+									
+							<ul>
+								<li class="file active">
+									<a href="/2021/03/12/04%20%E6%95%B0%E6%8D%AE%E5%BA%93/PostgreSql/Linux%E4%B8%8BPostgreSql%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/">
+										Linux下PostgreSql源码安装
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/04%20%E6%95%B0%E6%8D%AE%E5%BA%93/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										05 中间件
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/05%20%E4%B8%AD%E9%97%B4%E4%BB%B6/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										06 容器化
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/06%20%E5%AE%B9%E5%99%A8%E5%8C%96/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										07 服务器
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/07%20%E6%9C%8D%E5%8A%A1%E5%99%A8/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										08 前端
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/08%20%E5%89%8D%E7%AB%AF/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										09 微服务
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/09%20%E5%BE%AE%E6%9C%8D%E5%8A%A1/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										10 微服务
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/10%20%E5%BE%AE%E6%9C%8D%E5%8A%A1/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										11 版本控制
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/11%20%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										12 系统设计
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/12%20%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										13 工作记录
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/13%20%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										99 其他
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/11/09/99%20%E5%85%B6%E4%BB%96/hello-world/">
+										hello-world
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2017/05/26/99%20%E5%85%B6%E4%BB%96/template/">
+										template
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+	Linux下PostgreSql源码安装
+</h1>
+<div class="article-meta">
+	
+	<span>Du</span>
+	<span>2021-03-12 12:12:57</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/04-数据库/">04 数据库</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/04-数据库/PostgreSql/">PostgreSql</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
+
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/PostgreSql/">PostgreSql</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本次以PostgreSQL 11.5 版本为样例，同时POSTGIS选择2.5.1版本。（PostgreSQL与POSTGIS有版本对应关系详细请看：<a target="_blank" rel="noopener" href="https://trac.osgeo.org/postgis/wiki/UsersWikiPostgreSQLPostGIS">https://trac.osgeo.org/postgis/wiki/UsersWikiPostgreSQLPostGIS</a>），本文章内容主要记录PostgreSQL 11.5 数据库详细安装过程。<br><img src="http://image.xhsblog.cn/image_1621331056855.png" alt="image.png"></p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>Linux Centos7.5<br>PostgreSQL 11.5源码压缩包（下载地址：<a target="_blank" rel="noopener" href="https://www.postgresql.org/ftp/source/">https://www.postgresql.org/ftp/source/</a>）<br>数据存放目录： /var/postgresql/data<br>软件安装位置： /opt/pg/<br>插件准备：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install zlib-devel</span><br><span class="line">yum install openssl-devel</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="安装步骤及脚本"><a href="#安装步骤及脚本" class="headerlink" title="安装步骤及脚本"></a>安装步骤及脚本</h2><ol>
+<li>创建用户和组</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupadd postgres</span><br><span class="line">useradd -g postgres postgres</span><br></pre></td></tr></table></figure>
+
+
+<ol start="2">
+<li>进入安装目录</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>解压</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf postgresql-11.5.tar.gz</span><br><span class="line"><span class="built_in">cd</span> postgresql-11.5</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>配置</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/opt/postgresql --without-readline --with-openssl</span><br><span class="line">./configure --prefix=/opt/pg --without-readline --with-openssl </span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>编译安装</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>安装contrib目录下的一些工具，是第三方组织的一些工具代码，建议安装(postgis安装的时候需要)</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/postgresql-11.5/contrib</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>添加环境变量，并使之生效（初级用户请自行学习设置)</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/opt/pg/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>建postgres数据库的目录</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /var/postgresql/data</span><br><span class="line">chown postgres:postgres /var/postgresql/*</span><br><span class="line">chown postgres:postgres /opt/pg/*</span><br><span class="line">chmod -R 775 /var/postgresql/*</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>切换用户</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su postgres</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>初始化数据库</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">initdb -D /var/postgresql/data</span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li>启动服务</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/home/postgres/logfile为输出日志</span></span><br><span class="line">pg_ctl -D /var/postgresql/data -l /home/postgres/logfile start</span><br></pre></td></tr></table></figure>
+
+<ol start="12">
+<li>创建测试数据库,测试是否成功</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#进入数据库命令界面</span></span><br><span class="line">psql</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建数据库</span></span><br><span class="line">create database <span class="built_in">test</span>;</span><br><span class="line"><span class="comment">#切换到test数据库</span></span><br><span class="line">\c <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建测试表</span></span><br><span class="line">create table <span class="built_in">test</span> (id <span class="built_in">integer</span>, name text);</span><br><span class="line"></span><br><span class="line"><span class="comment">#插入测试数据</span></span><br><span class="line">insert into <span class="built_in">test</span> values (1,<span class="string">&#x27;david&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#选择数据</span></span><br><span class="line">select * from <span class="built_in">test</span> ;</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建用户</span></span><br><span class="line">CREATE USER <span class="built_in">test</span> WITH PASSWORD <span class="string">&#x27;test&#x27;</span>;</span><br><span class="line"><span class="comment">#授予用户数据库权限</span></span><br><span class="line">GRANT ALL PRIVILEGES ON DATABASE <span class="built_in">test</span> TO <span class="built_in">test</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#退出</span></span><br><span class="line"><span class="built_in">exit</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="13">
+<li>修改linux 系统用户postgres 的密码</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd postgres</span><br></pre></td></tr></table></figure>
+
+<ol start="14">
+<li>修改PostgresSQL 数据库配置实现远程访问</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#--------------------允许远程连接---------------------------</span></span><br><span class="line"><span class="comment">#修改客户端认证配置文件pg_hba.conf，将需要远程访问数据库的IP地址或地址段加入该文件</span></span><br><span class="line">vi /var/postgresql/data/pg_hba.conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#在文件的最下方加上下面的这句话</span></span><br><span class="line">host    all         all         0.0.0.0/0             trust</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置监听整个网络，查找“listen_addresses ”字符串，</span></span><br><span class="line">vi /var/postgresql/data/postgresql.conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改为如下：</span></span><br><span class="line">listen_addresses = <span class="string">&#x27;*&#x27;</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#重启服务</span></span><br><span class="line">pg_ctl -D /var/postgresql/data -l /home/postgres/logfile restart</span><br><span class="line"></span><br><span class="line"><span class="comment">#停止服务</span></span><br><span class="line">pg_ctl -D /var/postgresql/data -l /home/postgres/logfile stop</span><br><span class="line"></span><br><span class="line"><span class="comment">#端口是否启用</span></span><br><span class="line">netstat -anp | grep 5432</span><br></pre></td></tr></table></figure>
+
+
+<p>至此，数据库安装全部完成。可以使用工具远程连接。（注意，远程连接前要查看5432端口是否开放，否则复发连接）</p>
+<h2 id="安装可能遇到的问题"><a href="#安装可能遇到的问题" class="headerlink" title="安装可能遇到的问题"></a>安装可能遇到的问题</h2><p>（1）问题1：<br>no configure: error: could not determine flags for linking embedded Perl.<br>This probably means that ExtUtils::Embed or ExtUtils::MakeMaker is not<br>installed.</p>
+<p>解决方法：<br>yum install perl-ExtUtils-Embed</p>
+<p>（2）问题2：<br>configure: error: readline library not found<br>If you have readline already installed, see config.log for details on the<br>failure. It is possible the compiler isn’t looking in the proper directory.<br>Use –without-readline to disable readline support.</p>
+<p>解决方法：<br>yum install readline readline-devel</p>
+<p>（3）问题3：<br>checking for inflate in -lz… no<br>configure: error: zlib library not found<br>If you have zlib already installed, see config.log for details on the<br>failure. It is possible the compiler isn’t looking in the proper directory.<br>Use –without-zlib to disable zlib support.</p>
+<p>解决方法：<br>yum install zlib zlib-devel</p>
+<p>（4）问题4：<br>checking for CRYPTO_new_ex_data in -lcrypto… no<br>configure: error: library ‘crypto’ is required for OpenSSL<br>解决方法：<br>yum install openssl openssl-devel</p>
+<p>（5）问题5：<br>checking for pam_start in -lpam… no<br>configure: error: library ‘pam’ is required for PAM<br>解决方法：<br>yum install pam pam-devel</p>
+<p>（6）问题6：<br>checking for xmlSaveToBuffer in -lxml2… no<br>configure: error: library ‘xml2’ (version &gt;= 2.6.23) is required for XML support<br>解决方法：<br>yum install libxml2 libxml2-devel</p>
+<p>（7）问题7：<br>checking for xsltCleanupGlobals in -lxslt… no<br>configure: error: library ‘xslt’ is required for XSLT support<br>解决方法：<br>yum install libxslt libxslt-devel</p>
+<p>（8）问题8：<br>configure: error: Tcl shell not found<br>解决方法：<br>yum install tcl tcl-devel</p>
+<p>（9）问题9：<br>checking for ldap.h… no<br>configure: error: header file is required for LDAP<br>解决方法：<br>yum install openldap openldap-devel</p>
+<p>（10）问题10：<br>checking for Python.h… no<br>configure: error: header file &lt;Python.h&gt; is required for Python<br>解决方法：<br>yum install python python-devel</p>
+<p>（11）问题11：<br>Error when bootstrapping CMake:<br>Cannot find appropriate C++ compiler on this system.<br>Please specify one using environment variable CXX.<br>See cmake_bootstrap.log for compilers attempted.<br>解决方法：<br>yum install gcc-c++</p>
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><p><strong>新建数据库</strong>：<br>[postgres@localhost ~]$ createdb test<br>查看所有数据库：<br>[postgres@localhost ~]$ psql -l<br><strong>连接到test数据库</strong>：<br>[postgres@localhost ~]$ psql test<br>psql (9.3.2)<br>Type “help” for help.<br>test=#<br><strong>创建数据表</strong>：<br>test=# create table person(id int, name varchar(10), sex char(1), birth date);<br>CREATE TABLE<br>test=# create table demo(id int);<br>CREATE TABLE<br><strong>列出表，视图和序列：</strong><br>test=# \d<br> public | demo   | table | postgres<br> public | person   | table | postgres<br><strong>查看表结构：</strong><br>test=# \d person<br> id     | integer               |<br> name   | character varying(10) |<br> sex    | character(1)          |<br> birth  | date                  |<br><strong>插入数据：</strong><br>test=# insert into person(id,name,sex,birth) values(1,’zhangsan’,’1’,’1990-01-08’);<br>INSERT 0 1<br><strong>查询表中的数据：</strong><br>test=# select * from person;<br> id |   name   | sex |   birth<br>—-+———-+—–+————<br>  1 | zhangsan | 1   | 1990-01-08<br>(1 row)<br><strong>更新数据：</strong><br>test=# update person set name=’lisi’ where id=1;<br>UPDATE 1<br><strong>删除数据：</strong><br>test=# delete from person where id = 1;<br>DELETE 1<br><strong>新增字段：</strong><br>alter table person add column address varchar(50);<br>ALTER TABLE<br>test=# \d person<br><strong>修改字段类型：</strong><br>alter table person alter column address type varchar(20);<br>ALTER TABLE<br>test=# \d person<br><strong>修改字段名：</strong><br>alter table person rename column id to no;<br><strong>修改表名：</strong><br>alter table person rename to person_demo;<br><strong>删除字段：</strong><br>alter table person drop column address;<br>ALTER TABLE<br>test=# \d person<br><strong>新增主键：</strong><br>test=# alter table person add primary key(id);<br>ALTER TABLE<br>test=# \d person<br><strong>增加约束：</strong><br>唯一约束：<br>test=# alter table person add constraint unique_name unique(name);<br>ALTER TABLE<br>test=# \d person<br><strong>删除约束：</strong><br>test=# alter table person drop constraint unique_name;<br>test=# \d person<br>test=# alter table person drop constraint person_pkey;<br>test=# \d person<br>查看建表语句:<br><strong>删除表：</strong><br>test=# drop table person;<br>test=# \d<br><strong>删除数据库：</strong><br>先退出psql，后删除数据库：<br>test=# \q<br>[postgres@localhost ~]$ dropdb test;<br>其实，可以在psql中直接<strong>通过sql命令创建和删除数据库</strong>：<br>[postgres@localhost ~]$ psql<br>postgres=# \l<br>postgres=# create database test;<br>CREATE DATABASE<br>postgres=# \l<br>postgres=# \c test;<br>test=# create table t(id int);<br>CREATE TABLE<br>test=# \d<br>test=# \c postgres<br>postgres=# drop database test;<br>DROP DATABASE<br>postgres=# \l</p>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2021/11/09/99%20%E5%85%B6%E4%BB%96/hello-world/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Hello World
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2017/05/26/01%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                redis常用命令
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">Du</a> 
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">W</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
